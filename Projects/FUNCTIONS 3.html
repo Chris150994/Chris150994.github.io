@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<script>
+
+
+			function builder() {
+				var nameValue = document.getElementById("name").value;
+				var ageValue = document.getElementById("age").value;
+				var occupationValue = document.getElementById("occupation").value;
+				var person = {nameValue, ageValue, occupationValue}
+				console.log(person)
+			};
+		</script>
+		<form action="javascript:;" onsubmit="builder()">
+			Name: <input type="text" name="name" id="name"><br>
+			Age: <input type="text" name="age" id="age"><br>
+			Occupation: <input type="text" name="occupation" id="occupation"><br>
+			<input type="submit" value="submit">
+		</form>
+	</body>
+</html>

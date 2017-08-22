@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<script>
+
+			function createParagraph() {
+				var textToAdd = document.getElementById("textCreateParagraph").value;
+				document.getElementById("paragraphs").innerHTML = " <p> " + textToAdd + " </p>";
+			}
+
+			function changeText() {
+				var textTo = document.getElementById("textToChange").value;
+				document.getElementById("paragraphs").innerHTML = " <p> " + textTo + " </p>";
+			}
+
+			function deleteParagraph() {
+				document.getElementById("paragraphs").innerHTML = "";
+			}
+
+
+
+		</script>
+		<table style="width: 400px">
+			<tr>
+				<td>
+					<button name="button1" onclick="createParagraph()" style="width: 200px">Create Paragraph</button>
+				</td>
+				<td>
+					<input type="text" id="textCreateParagraph" style="width: 200px,">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button name="button2" onclick="changeText()" style="width: 200px">Alter Paragraph</button>
+				</td>
+				<td>
+					<input type="text" id="textToChange" style="width: 200px,">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button name="button3" onclick="deleteParagraph()" style="width: 200px">Delete Paragraph</button>
+				</td>
+			</tr>
+		</table>
+		
+		<div id="paragraphs">
+			
+		</div>
+
+	</body>
+</html>

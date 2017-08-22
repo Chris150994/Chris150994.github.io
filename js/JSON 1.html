@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<script>
+
+		function readJSON() {
+			var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json";
+			var request = new XMLHttpRequest();
+			request.open("GET", requestURL);
+			request.responseType = "json"
+			request.send();
+			request.onload = function() {
+				var requestData = request.response;
+				var myH1 = document.createElement("h1");
+				for (var key in requestData) {
+					if (requestData.hasOwnProperty(key)) 
+						main.textContent = requestData["squadName"] + "\n" + requestData["homeTown"] + "\n";
+					}
+				}
+			}
+		</script>
+
+		<input type="button" name="button1" onclick="readJSON()">
+		<div id="main">
+			
+		</div>
+	</body>
+</html>
