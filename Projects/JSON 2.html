@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<script>
+
+		function readJSON() {
+			var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
+			var request = new XMLHttpRequest();
+			var searchPhrase = document.getElementById("text1").value;
+			request.open("GET", requestURL);
+			request.responseType = "json"
+			request.send();
+			request.onload = function() {
+				var requestData = request.response;
+				for (var key in requestData) {
+					if (requestData[key].hse === searchPhrase) {
+						console.log(requestData[key].nm);
+						console.log(requestData[key].cty);
+						console.log(requestData[key].hse);
+						console.log(requestData[key].yrs);
+					}
+				}
+			}
+		}
+		</script>
+
+
+		<button id="button1" onclick="readJSON()">Click Me</button>
+		<input id="text1" type="text">
+		<div id="main">
+			
+		</div>
+	</body>
+</html>
