@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body>
+	<table style="width:320px;height:170px;border:1px solid #000;vertical-align:left">
+		<tr>Vehicle</tr>
+		<tr>
+			<td>
+				<button id="create" onclick="createVehicle()" style="height:155px;width:100px"> Create Vehicle </button>
+			</td>
+			<td>
+				<select name="Type" id="vehicleType" style="width:204px">
+					<option value="Car">Car</option>
+					<option value="Motorbike">Motorbike</option>
+				</select>
+				<input type="text" id="make" value="Make" style="height:20px;width:200px">
+				<input type="text" id="reg" value="Registration" style="height:20px;width:200px">
+				<textarea id="faults" style="width:198px" rows="5" value="NOFAULTS"></textarea>
+			</td>
+		</tr>
+	</table>
+	</br>
+	<table style="width:320px;height:90px;border:1px solid #000;vertical-align:left">
+		<tr>Vehicles Registered</tr>
+		<tr>
+			<td>
+				<select name="vehicleList" id="vehicleList" size="6" style="width:205px" onchange="updateVehiclesTextBoxes()"></select>
+			</td>
+			<td>
+				<button id="checkIn" onclick="checkIn()" style="height:95px;width:100px"> Check Vehicle in </button>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table style="width:320px;height:90px;border:1px solid #000;vertical-align:left">
+		<tr>Garage Storage</tr>
+		<tr>
+			<td>
+				<select name="checkedInList" id="checkedInList" size="6" style="width:205px" onchange="updateCheckedInTextBoxes()"></select>
+			</td>
+			<td>
+				<button id="checkOut" onclick="checkOut()" style="height:95px;width:100px"> Check Vehicle out </button>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<button id="calculateBill" onclick="calculateBill()" style="height:95px;width:100px"> Calculate Bill </button>
+	<script src="Garage.js"></script>
+</body>
+
+</html>
