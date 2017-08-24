@@ -42,19 +42,21 @@ function checkOut(reg) {
 }
 
 function outputCheckedInVehiclesContents() {
-    let final = "Checked in vehicles:\n";
+    let finalString = "Checked in vehicles:\n";
     checkedInVehicles.forEach(function (vehicle) {
-        final = final + vehicle["type"] + " " + vehicle["reg"] + " " + vehicle["make"] + " " + vehicle["faults"] + "\n";
+        finalString = finalString + vehicle["type"] + " " + vehicle["reg"] + " " + vehicle["make"] + " " + vehicle["faults"] + "\n";
     }, this);
-    return final;
+    console.log(finalString);
+    return finalString;
 }
 
 function outputVehiclesContents() {
-    let final = "Vehicles\n";
+    let finalString = "Vehicles:\n";
     vehicles.forEach(function (vehicle) {
-        final = final + vehicle["type"] + " " + vehicle["reg"] + " " + vehicle["make"] + " " + vehicle["faults"] + "\n";
+        finalString = finalString + vehicle["type"] + " " + vehicle["reg"] + " " + vehicle["make"] + " " + vehicle["faults"] + "\n";
     }, this);
-    return final;
+    console.log(finalString);
+    return finalString;
 }
 
 function calculateBill(reg) {

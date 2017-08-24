@@ -9,8 +9,9 @@
 	<table border="style:inset">
 		<tr style="width:370px">
 			<td>
-				<input type="text" id="command" style="width:270px">
-				<button id="btnSubmit" onclick="sendCommand(document.getElementById('command').value)">Submit</button>
+				<form onsubmit="sendCommand(document.getElementById('command').value); return false">
+					<input type="text" id="command" style="width:326px">
+				</form>
 			</td>
 		</tr>
 		<tr>

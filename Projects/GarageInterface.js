@@ -1,29 +1,34 @@
 function sendCommand(text) {
     let commands = text.split(" ");
-    switch (commands[0].toLowerCase()) {
-        case "help":
-            help();
-            break;
-        case "create":
-            create(commands[1], commansd[2], commands[3], commands[4]);
-            break;
-        case "output":
-            output(commands[1]);
-        case "check-in":
-            updateWith(checkIn(commands[1]));
-            break;
-        case "check-out":
-            updateWith(checkOut(commands[1]));
-            break;
-        case "bill":
-            updateWith(calculateBill(commands[1]));
-            break;
-        case "clear":
-            document.getElementById("text").value = "";
-            break;
-        default:
-            break;
+    if (text != "") {
+        switch (commands[0].toLowerCase()) {
+            case "help":
+                help();
+                break;
+            case "create":
+                create(commands[1], commands[2], commands[3], commands[4]);
+                break;
+            case "output":
+                output(commands[1]);
+                break;
+            case "check-in":
+                updateWith(checkIn(commands[1]));
+                break;
+            case "check-out":
+                updateWith(checkOut(commands[1]));
+                break;
+            case "bill":
+                updateWith(calculateBill(commands[1]));
+                break;
+            case "clear":
+                document.getElementById("text").value = "";
+                break;
+            default:
+                break;
+        }
+        clearTextBox();
     }
+
 }
 
 function updateWith(update) {
@@ -36,13 +41,16 @@ function help() {
         "\nTo output vehicles: \n" + "output vehicles" +
         "\nTo output vehicles in garage: \n" + "output garage" +
         "\nTo check in a vehicle: \n" + "check-in (reg)" +
-        "\nTo check out a vehicle: \n" + "check-out (reg)\n" +
+        "\nTo check out a vehicle: \n" + "check-out (reg)" +
         "\nTo clear the console log: " + "clear");
 }
 
 function create(command1, command2, command3, command4) {
-    if (command1 != null && command2 != null && command3 != null && command4) {
-        console.log(createVehicle(command1, command2, command3, command4));
+    if (command1 != null && command2 != null && command3 != null) {
+        if (command4 === null) {
+            command4
+        }
+        createVehicle(command1, command2, command3, command4);
         updateWith(command2 + " " + command3 + " - Added \n");
     }
     else (
@@ -66,4 +74,8 @@ function output(command) {
     else (
         updateWith("Invalid specifier. Use either 'vehicles' or 'garage' after output.")
     )
+}
+
+function clearTextBox() {
+    document.getElementById("command").value = "";
 }
