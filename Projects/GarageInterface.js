@@ -1,12 +1,22 @@
 function sendCommand(text) {
     let commands = text.split(" ");
+    let fault = ""
     if (text != "") {
         switch (commands[0].toLowerCase()) {
             case "help":
                 help();
                 break;
             case "create":
-                create(commands[1], commands[2], commands[3], commands[4]);
+                if (commands.length === 4) {
+                    fault = "N/A"
+                }
+                else {
+                    for (let i = 4; i < commands.length; i++) {
+                        fault = fault + commands[i] + " ";
+                    }
+                }
+                create(commands[1], commands[2], commands[3], commands[4])
+
                 break;
             case "output":
                 output(commands[1]);
@@ -47,9 +57,6 @@ function help() {
 
 function create(command1, command2, command3, command4) {
     if (command1 != null && command2 != null && command3 != null) {
-        if (command4 === null) {
-            command4
-        }
         createVehicle(command1, command2, command3, command4);
         updateWith(command2 + " " + command3 + " - Added \n");
     }
