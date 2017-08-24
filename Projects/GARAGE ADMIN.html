@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body>
+	<table border="style:inset">
+		<tr style="width:370px">
+			<td>
+				<input type="text" id="command" style="width:270px">
+				<button id="btnSubmit" onclick="sendCommand(document.getElementById('command').value)">Submit</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<textarea id="text" cols="30" rows="10" style="width:326px;resize:none" readonly>Type 'help' for a list of commands</textarea>
+			</td>
+		</tr>
+	</table>
+
+	<script src="GarageInterface.js"></script>
+	<script src="Garage2.js"></script>
+</body>
+
+</html>
