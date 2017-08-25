@@ -8,7 +8,11 @@
 			function FizzBuzz(max, divisableBy3Output, divisableBy5Output) {
 				for (var i = 0; i <= max; i++) {
 
-					if (i%5==0) {
+					if (i%5==0 && i%3==0){
+						console.log(i);
+						console.log(divisableBy3Output + divisableBy5Output);
+					}
+					else if (i%5==0) {
 						console.log(i);
 						console.log(divisableBy5Output);
 					}
