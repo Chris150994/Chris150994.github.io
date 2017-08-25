@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<script>
+			function FizzBuzz(max, divisableBy3Output, divisableBy5Output) {
+				for (var i = 0; i <= max; i++) {
+					if (i%5==0 && i%3==0){
+						console.log(i);
+						console.log(divisableBy3Output + divisableBy5Output);
+					}
+					else if (i%5==0) {
+						console.log(i);
+						console.log(divisableBy5Output);
+					}
+					else if (i%3==0) {
+						console.log(i);
+						console.log(divisableBy3Output);
+					}
+				}
+			}
+
+			FizzBuzz(100, "Fizz", "Buzz");
+			FizzBuzz(100, "Pinapple", "Tomato");
+		</script>
+	</body>
+</html>
