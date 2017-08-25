@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hangman</title>
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "css.css" />
+    <h1 style="text-align:center;color:white"  id="header">Hangman</h1>
+    <script src="Hangman.js"> </script>
+<style>
+    body{
+        background-image:url("hangman.jpg");
+        background-repeat:no-repeat;
+
+    }
+</style>
+</head>
+<body onload="loadImage" style="max-width:510px">
+    <button id="newGame" style="width:504px;float:center" onclick="start()">New Game</button>
+    <button id="play" style="width:504px;float:center" onclick="guess()">Guess Letter</button>
+    <input id="letterGuess" style="width:500px;float:center" type="text" value="Enter letter here" autofocus>
+    <textarea id="output" rows="15" style="resize:none;width:498px" readonly></textarea>
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Difficulty</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#" onclick="changeHeader('Easy')">Easy</a>
+            <a href="#" onclick="changeHeader('Medium')">Medium</a>
+            <a href="#" onclick="changeHeader('Hard')">Hard</a>
+        </div>
+    </div>
+    <br>
+</body>
+</html>
